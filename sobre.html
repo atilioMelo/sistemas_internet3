@@ -1,0 +1,131 @@
+<!-- Página de história | Segunda página do site, vinculada pelo menu de navegação -->
+<!-- Disciplina: Sistemas para Internet — IFTM Campus Uberlândia Centro -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia da Copa - História</title>
+    <link rel="icon" type="image/png" href="imagens/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Teko:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Menu de navegação replicado em todas as páginas para manter a navegação interna funcional -->
+    <header id="cabecalho">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Guia da Copa</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html" class="ativo">História</a></li>
+                <li><a href="jogos.html">Jogos</a></li>
+                <li><a href="selecoes.html">Seleções</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero reduzido: cada página interna usa .hero-pequeno com altura menor que a home -->
+        <!-- <h1> único da página, mantendo a hierarquia correta de headings -->
+        <section class="hero hero-pequeno">
+            <div class="hero-conteudo">
+                <p class="kicker">Memória do Torneio</p>
+                <h1>História da Copa do Mundo</h1>
+                <p>Uma competição que atravessa gerações, unindo países, culturas e paixões.</p>
+            </div>
+        </section>
+
+        <!-- Seção de texto + imagem: uso de <h2> e <h3> dentro do fluxo correto de headings.
+             Imagem do troféu com alt descritivo e title para tooltip. -->
+        <section class="sobre-historia">
+            <div class="container sobre-grid">
+                <div class="sobre-texto">
+                    <h2>Do Uruguai a 2026</h2>
+                    <p>A primeira Copa aconteceu em 1930, no Uruguai. Desde então, o torneio se consolidou como o maior evento esportivo do planeta.</p>
+                    <p>Ao longo das décadas, a competição evoluiu em organização, tecnologia e alcance global, mantendo a essência de rivalidade e emoção.</p>
+                    <h3>Por que a Copa é tão importante?</h3>
+                    <p>Além do futebol, a Copa impulsiona turismo, inovação e integração cultural. Cada edição deixa legados esportivos e sociais para os países-sede.</p>
+                    <a href="selecoes.html" class="btn">Conhecer Seleções</a>
+                </div>
+                <div class="sobre-imagem">
+                    <img src="imagens/trofeu_copa_2.png" alt="Trofeu da Copa do Mundo em destaque" title="Trofeu da Copa do Mundo em destaque">
+                </div>
+            </div>
+        </section>
+
+        <!-- Edições marcantes: 3 cards com imagem histórica, <article>, <h3> e texto descritivo.
+             Imagens com alt e title -->
+        <section class="missao-section">
+            <div class="container">
+                <h2>Edições Marcantes</h2>
+                <div class="missao-grid">
+                    <article class="missao-card">
+                        <img src="imagens/img1_copa58_8.jpg" alt="Registro historico da Copa de 1958" title="Registro historico da Copa de 1958" class="timeline-img">
+                        <span class="icone">1958</span>
+                        <h3>Suécia</h3>
+                        <p>Brasil conquista seu primeiro título mundial e inicia uma era histórica.</p>
+                    </article>
+                    <article class="missao-card">
+                        <img src="imagens/img2_copa70_8.jpg" alt="Registro historico da Copa de 1970" title="Registro historico da Copa de 1970" class="timeline-img">
+                        <span class="icone">1970</span>
+                        <h3>México</h3>
+                        <p>Brasil conquista o tri e eterniza uma das maiores seleções.</p>
+                    </article>
+                    <article class="missao-card">
+                        <img src="imagens/img3_copa22_8.jpg" alt="Registro historico da Copa de 2022" title="Registro historico da Copa de 2022" class="timeline-img">
+                        <span class="icone">2022</span>
+                        <h3>Catar</h3>
+                        <p>Final histórica decidida nos pênaltis e título da Argentina.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="tecnologias-section">
+            <div class="container">
+                <h2>Legados da Copa</h2>
+                <div class="tech-lista">
+                    <span class="tech-tag">Infraestrutura</span>
+                    <span class="tech-tag">Turismo</span>
+                    <span class="tech-tag">Tecnologia VAR</span>
+                    <span class="tech-tag">Inclusão</span>
+                    <span class="tech-tag">Formação de base</span>
+                    <span class="tech-tag">Cultura global</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Shakira: lista não ordenada <ul> com histórico de participações em Copas. -->
+        <section class="shakira-section">
+            <div class="container shakira-grid">
+                <div class="shakira-imagem-box">
+                    <img src="imagens/shakira.png" alt="Shakira em performance relacionada a Copa do Mundo" title="Shakira em performance relacionada a Copa do Mundo" class="shakira-img">
+                </div>
+                <div class="shakira-texto">
+                    <h2>A Voz das Copas: Shakira</h2>
+                    <p>Se Copa fosse playlist, a Shakira estaria no topo sem discussão. Ela virou trilha sonora oficial da emoção em vários torneios.</p>
+                    <p>Com energia, refrões grudentos e vibe de estádio, a cantora marcou gerações de torcedores e ajudou a transformar abertura de Copa em evento pop global.</p>
+                    <h3>Histórico de hits ligados às Copas</h3>
+                    <ul class="lista-nao-ordenada">
+                        <li><strong>2006:</strong> participação no show da final em Berlim, reforçando a presença latina no evento.</li>
+                        <li><strong>2010:</strong> <em>Waka Waka (This Time for Africa)</em> vira hino absoluto da Copa na África do Sul.</li>
+                        <li><strong>2014:</strong> <em>La La La (Brazil 2014)</em> embala a torcida e domina as playlists do Mundial no Brasil.</li>
+                        <li><strong>2026:</strong> Shakira e Burna Boy lançam <em>Dai Dai</em>, música oficial da Copa do Mundo, mantendo a cantora como uma das grandes vozes do torneio.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé semântico consistente em todas as páginas -->
+    <footer id="rodape">
+        <p>&copy; 2026 Guia da Copa. Projeto acadêmico sem fins comerciais.</p>
+        <p>IFTM - Campus Uberlândia Centro | Sistemas para Internet</p>
+    </footer>
+
+</body>
+</html>

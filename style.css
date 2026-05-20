@@ -1,0 +1,800 @@
+/* ============================================================
+    style.css — Guia da Copa 2026
+    Projeto acadêmico | Disciplina: Sistemas para Internet
+    IFTM - Campus Uberlândia Centro
+    Arquivo CSS externo único, vinculado a todas as 5 páginas HTML.
+    ============================================================ */
+
+/* === Variáveis globais: paleta de cores, sombras, bordas e duração de transição.
+         Uso de custom properties (--var) para manter consistência visual em todo o projeto. === */
+:root {
+    --cor-primaria: #0f7d3b;
+    --cor-secundaria: #f4c318;
+    --cor-terciaria: #0c2c66;
+    --cor-escura: #052038;
+    --cor-texto: #1f2a37;
+    --cor-fundo: #eef4ec;
+    --cor-branco: #ffffff;
+    --cor-clara: #dce8db;
+    --cor-media: #5d6b76;
+    --sombra: 0 8px 20px rgba(5, 32, 56, 0.12);
+    --sombra-forte: 0 18px 35px rgba(5, 32, 56, 0.2);
+    --borda-radius: 12px;
+    --transicao: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+    color: var(--cor-texto);
+    line-height: 1.6;
+    background:
+        radial-gradient(circle at 90% 0%, rgba(244, 195, 24, 0.18), transparent 35%),
+        radial-gradient(circle at 0% 100%, rgba(15, 125, 59, 0.14), transparent 30%),
+        var(--cor-fundo);
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+/* === Navbar fixa no topo da viewport, como extra de usabilidade.
+       Uso do seletor de ID (#cabecalho) para garantir especificidade máxima.
+       z-index alto para sobrepor todos os outros elementos da página. === */
+#cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(90deg, var(--cor-escura), var(--cor-terciaria));
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+}
+
+.navbar {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--cor-branco);
+    font-family: 'Teko', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.nav-links a {
+    color: #eaf2ff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.42rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: all var(--transicao);
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* === Destaque visual no link ativo do menu.
+       A classe .ativo é aplicada manualmente em cada página para indicar qual seção está aberta. === */
+.nav-links a.ativo {
+    background-color: var(--cor-secundaria);
+    color: #0f1d2d;
+}
+
+main {
+    margin-top: 78px;
+}
+
+/* === Seção hero: imagem de fundo banner2.png com position relative para o overlay.
+       O pseudo-elemento ::before cria a camada escura semitransparente sobre a imagem. === */
+.hero {
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 5.5rem 1rem;
+    background: url('imagens/banner2.png') center center / cover no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-copa {
+    min-height: 68vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center 30%;
+}
+
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+.hero::before {
+    background:
+        linear-gradient(rgba(3, 16, 30, 0.20), rgba(3, 16, 30, 0.22)),
+        radial-gradient(circle at center, rgba(3, 16, 30, 0.02) 0%, rgba(3, 16, 30, 0.12) 55%, rgba(3, 16, 30, 0.22) 100%);
+    z-index: 0;
+}
+
+.hero::after {
+    display: none;
+}
+
+.hero-pequeno {
+    padding: 3.6rem 1rem;
+    min-height: 42vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center 20%;
+}
+
+.hero-conteudo {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.72);
+    background: rgba(3, 16, 30, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 18px;
+    padding: 1.8rem 1.6rem;
+    box-shadow: 0 22px 42px rgba(0, 0, 0, 0.55);
+}
+
+.kicker {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #f7f7d7;
+    margin-bottom: 0.4rem;
+}
+
+.hero h1 {
+    font-family: 'Teko', sans-serif;
+    font-size: 3.3rem;
+    letter-spacing: 0.8px;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 1.12rem;
+    margin-bottom: 1.6rem;
+    color: #f7fbff;
+}
+
+.hero-conteudo .kicker,
+.hero-conteudo p {
+    max-width: 34rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === Botão principal: hover com inversão de cores e leve elevação via transform.
+       transition garante a animação suave de 0.3s. === */
+.btn {
+    display: inline-block;
+    padding: 0.72rem 1.6rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid var(--cor-secundaria);
+    background: var(--cor-secundaria);
+    color: #1b1f2b;
+    transition: all var(--transicao);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--cor-secundaria);
+    transform: translateY(-2px);
+}
+
+.btn-link {
+    text-decoration: none;
+    color: var(--cor-terciaria);
+    font-weight: 700;
+}
+
+.btn-link:hover {
+    color: var(--cor-primaria);
+}
+
+section {
+    padding: 3.8rem 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--cor-escura);
+    margin-bottom: 2rem;
+}
+
+.grid-artigos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.3rem;
+}
+
+.cultura-section {
+    background: linear-gradient(120deg, #e8f2e5, #f3f7ee);
+}
+
+.cultura-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem;
+}
+
+.cultura-card {
+    background: var(--cor-branco);
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra);
+    padding: 1rem;
+    transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.cultura-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-forte);
+}
+
+.cultura-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 0.7rem;
+}
+
+.cultura-card h3 {
+    color: var(--cor-escura);
+    margin-bottom: 0.35rem;
+}
+
+.cultura-card p {
+    color: var(--cor-media);
+}
+
+.card,
+.lista-box,
+.missao-card,
+.contato-form,
+.info-lista li,
+.jogo-card,
+.selecao-card {
+    background: var(--cor-branco);
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra);
+}
+
+.card {
+    overflow: hidden;
+    transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.card:hover,
+.jogo-card:hover,
+.selecao-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-forte);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.imagem-oficial {
+    width: min(100%, 760px);
+    border-radius: var(--borda-radius);
+    margin: 0 auto 1rem;
+    display: block;
+    box-shadow: var(--sombra);
+}
+
+.card-conteudo {
+    padding: 1.2rem;
+}
+
+.card-conteudo h3 {
+    color: var(--cor-escura);
+    margin-bottom: 0.5rem;
+}
+
+.card-conteudo p {
+    color: var(--cor-media);
+    margin-bottom: 0.8rem;
+}
+
+.listas {
+    background-color: var(--cor-clara);
+}
+
+.lista-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+.lista-box {
+    flex: 1;
+    min-width: 260px;
+    padding: 1.5rem;
+}
+
+.lista-box h2 {
+    text-align: left;
+    font-size: 1.4rem;
+}
+
+.lista-ordenada,
+.lista-nao-ordenada {
+    padding-left: 1.25rem;
+}
+
+.lista-ordenada li,
+.lista-nao-ordenada li {
+    margin: 0.45rem 0;
+}
+
+.tabela-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+}
+
+.ranking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+.subtitulo-tabela {
+    font-size: 1.2rem;
+    color: var(--cor-escura);
+    padding: 0.9rem 1rem 0.4rem;
+    background-color: var(--cor-branco);
+}
+
+/* === Tabela estruturada com thead, tbody, th e td.
+       Cabeçalho com gradiente verde-azul e efeito de hover nas linhas do tbody. === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--cor-branco);
+}
+
+thead {
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-terciaria));
+    color: var(--cor-branco);
+}
+
+th,
+td {
+    text-align: left;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid #e7ecf0;
+}
+
+tbody tr:hover {
+    background-color: #edf8f1;
+}
+
+.link-externo-section {
+    background: linear-gradient(120deg, #dce8db, #f0e3a4);
+}
+
+.link-cta {
+    text-align: center;
+}
+
+.link-cta p {
+    max-width: 640px;
+    margin: 0 auto 1.2rem;
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.sobre-texto h2,
+.contato-form h2,
+.contato-info h2,
+.lista-box h2 {
+    margin-bottom: 1rem;
+}
+
+.sobre-texto p {
+    margin-bottom: 0.8rem;
+    color: var(--cor-media);
+}
+
+.sobre-imagem {
+    overflow: hidden;
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra);
+}
+
+.sobre-imagem img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+}
+
+.missao-section {
+    background-color: var(--cor-clara);
+}
+
+.missao-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.missao-card {
+    text-align: center;
+    padding: 1.2rem;
+}
+
+.timeline-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 0.6rem;
+}
+
+.missao-card .icone {
+    font-family: 'Teko', sans-serif;
+    font-size: 2rem;
+    color: var(--cor-primaria);
+}
+
+.tech-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+}
+
+.tech-tag {
+    background: var(--cor-terciaria);
+    color: var(--cor-branco);
+    border-radius: 999px;
+    padding: 0.45rem 1rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.shakira-section {
+    background: linear-gradient(135deg, #f2f5e7, #e7efe9);
+}
+
+.shakira-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.25fr;
+    gap: 1.4rem;
+    align-items: stretch;
+}
+
+.shakira-imagem-box,
+.shakira-texto {
+    background: var(--cor-branco);
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra);
+}
+
+.shakira-imagem-box {
+    padding: 0.8rem;
+}
+
+.shakira-img {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.shakira-texto {
+    padding: 1.3rem 1.2rem;
+}
+
+.shakira-texto h2 {
+    text-align: left;
+    margin-bottom: 0.75rem;
+}
+
+.shakira-texto p {
+    color: var(--cor-media);
+    margin-bottom: 0.65rem;
+}
+
+.shakira-texto h3 {
+    color: var(--cor-escura);
+    margin: 0.8rem 0 0.5rem;
+}
+
+.shakira-texto .lista-nao-ordenada {
+    padding-left: 1.2rem;
+}
+
+.shakira-texto .lista-nao-ordenada li {
+    margin-bottom: 0.45rem;
+}
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 1.3rem;
+}
+
+.contato-form,
+.contato-info {
+    padding: 1.4rem;
+}
+
+/* === Formulário de contato estilizado.
+       Inclui label, input, select, textarea e button, todos com estilos personalizados.
+       Foco nos campos adiciona borda verde e box-shadow para feedback visual. === */
+.form-grupo {
+    margin-bottom: 0.9rem;
+}
+
+.form-grupo label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+.form-grupo input,
+.form-grupo textarea,
+.form-grupo select {
+    width: 100%;
+    border: 1.5px solid #ccd8e1;
+    border-radius: 8px;
+    padding: 0.65rem 0.75rem;
+    font: inherit;
+}
+
+.form-grupo textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus,
+.form-grupo select:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(15, 125, 59, 0.15);
+}
+
+.btn-enviar {
+    width: 100%;
+}
+
+.info-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.info-lista li {
+    padding: 0.95rem;
+    border-left: 4px solid var(--cor-secundaria);
+}
+
+.info-icone {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.4rem;
+    color: var(--cor-terciaria);
+    display: block;
+}
+
+.contato-horario {
+    padding: 0.9rem;
+    border-radius: 10px;
+    background: #f2f7f2;
+}
+
+.jogos-grid,
+.selecoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.jogo-card,
+.selecao-card {
+    padding: 1rem;
+}
+
+.jogo-img,
+.selecao-img,
+.mapa-img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.jogo-img {
+    height: 150px;
+    margin-bottom: 0.6rem;
+}
+
+.selecao-img {
+    height: 130px;
+    object-fit: contain;
+    background: #f7f9fb;
+    padding: 0.5rem;
+    margin-bottom: 0.7rem;
+}
+
+.mapa-box {
+    background: var(--cor-branco);
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra);
+    padding: 1rem;
+}
+
+.mapa-img {
+    max-height: 430px;
+}
+
+.jogo-data {
+    font-size: 0.9rem;
+    color: var(--cor-primaria);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.jogo-card h3,
+.selecao-card h3 {
+    color: var(--cor-escura);
+    margin-bottom: 0.35rem;
+}
+
+.selecao-card ul {
+    margin-top: 0.7rem;
+    padding-left: 1.1rem;
+    color: var(--cor-media);
+}
+
+#rodape {
+    text-align: center;
+    padding: 1.6rem 1rem;
+    background: #061a2f;
+    color: #d9e4ec;
+}
+
+#rodape p {
+    margin: 0.25rem 0;
+}
+
+/* === Animação de entrada: os cards e o hero descem suavemente ao carregar a página.
+    Complementa as transitions de hover como segundo tipo de animação do projeto. === */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-conteudo,
+.card,
+.jogo-card,
+.selecao-card,
+.lista-box {
+    animation: fadeInDown 0.55s ease both;
+}
+
+/* === Media queries: responsividade mínima adaptável.
+    Três breakpoints: 980px (tablet), 768px (mobile), 480px (celular pequeno).
+    Grids passam para coluna única e fontes são reduzidas conforme a tela diminui. === */
+@media (max-width: 980px) {
+    .sobre-grid,
+    .contato-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ranking-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shakira-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-imagem img {
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    main {
+        margin-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    section h2 {
+        font-size: 1.65rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 4.4rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .nav-links a {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        font-size: 0.83rem;
+        padding: 0.65rem 0.7rem;
+    }
+}

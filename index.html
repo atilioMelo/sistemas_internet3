@@ -1,0 +1,240 @@
+<!-- Página inicial do projeto | Tema: Copa do Mundo -->
+<!-- Disciplina: Sistemas para Internet — IFTM Campus Uberlândia Centro -->
+<!-- DOCTYPE obrigatório: define o documento como HTML5 -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia da Copa - Hobby Futebol</title>
+    <link rel="icon" type="image/png" href="imagens/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Teko:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Menu de navegação principal: links internos para todas as 5 páginas do site -->
+    <!-- Uso de <header>, <nav> e <ul> para estrutura semântica sem excesso de divs -->
+    <!-- A classe .ativo marca a página atual para o destaque visual no menu -->
+    <header id="cabecalho">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Guia da Copa</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="ativo">Início</a></li>
+                <li><a href="sobre.html">História</a></li>
+                <li><a href="jogos.html">Jogos</a></li>
+                <li><a href="selecoes.html">Seleções</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero principal: único <h1> da página, conforme hierarquia de headings -->
+        <!-- Imagem de fundo definida via CSS em .hero com banner2.png -->
+        <section class="hero hero-copa">
+            <div class="hero-conteudo">
+                <p class="kicker">Especial Copa do Mundo</p>
+                <h1>Guia da Copa 2026</h1>
+                <p>Tudo em um só lugar: história, jogos, seleções, cultura de Copa e curiosidades para quem vive o clima do Mundial.</p>
+                <a href="jogos.html" class="btn">Ver Próximos Jogos</a>
+            </div>
+        </section>
+
+        <!-- Seção de destaques: 3 cards usando <article> e <h3>.
+             Cada imagem tem atributo alt (acessibilidade, requisito) e title (tooltip). -->
+        <section class="artigos" id="destaques">
+            <div class="container">
+                <h2>Destaques da Competição</h2>
+                <div class="grid-artigos">
+                    <article class="card">
+                        <img src="imagens/img_estadio_1.jpg" alt="Estadio lotado durante jogo da Copa do Mundo" title="Estadio lotado durante jogo da Copa do Mundo">
+                        <div class="card-conteudo">
+                            <h3>Sedes e Estádios Confirmados</h3>
+                            <p>A Copa de 2026 será disputada em três países, com estádios modernos e grande expectativa de público.</p>
+                            <a href="sobre.html" class="btn-link">Conhecer histórico</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="imagens/img1_torcida_5.jpeg" alt="Torcida comemorando em arquibancada de estadio" title="Torcida comemorando em arquibancada de estadio">
+                        <div class="card-conteudo">
+                            <h3>Seleções Favoritas ao Título</h3>
+                            <p>Brasil, França e Argentina aparecem entre as favoritas, mas surpresas sempre fazem parte do torneio.</p>
+                            <a href="selecoes.html" class="btn-link">Ver seleções</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="imagens/img_bola_oficial_6.avif" alt="Bola oficial da Copa" title="Bola oficial da Copa">
+                        <div class="card-conteudo">
+                            <h3>Formato com 48 Equipes</h3>
+                            <p>O novo formato aumenta a diversidade de países participantes e torna a fase inicial ainda mais intensa.</p>
+                            <a href="jogos.html" class="btn-link">Ver tabela de jogos</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de listas: contém obrigatoriamente 1 lista ordenada <ol> e 1 não ordenada <ul> -->
+        <section class="listas" id="listas">
+            <div class="container lista-flex">
+                <div class="lista-box">
+                    <h2>Top 5 Maiores Campeões</h2>
+                    <ol class="lista-ordenada">
+                        <li>Brasil - 5 títulos</li>
+                        <li>Alemanha - 4 títulos</li>
+                        <li>Itália - 4 títulos</li>
+                        <li>Argentina - 3 títulos</li>
+                        <li>França - 2 títulos</li>
+                    </ol>
+                </div>
+
+                <div class="lista-box">
+                    <h2>Curiosidades da Copa</h2>
+                    <ul class="lista-nao-ordenada">
+                        <li>Primeira edição: Uruguai, em 1930</li>
+                        <li>Único pentacampeão: Brasil</li>
+                        <li>Maior artilheiro da história: Miroslav Klose</li>
+                        <li>Maior público: final de 1950 no Maracanã</li>
+                        <li>Primeira Copa com 48 seleções: 2026</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabela estruturada com <thead>, <tbody>, <th> e <td> -->
+        <!-- Duas tabelas lado a lado: artilheiros e assistências em Copas do Mundo -->
+        <section class="tabela-section" id="ranking">
+            <div class="container">
+                <h2>Ranking de Artilheiros e Assistências em Copas</h2>
+                <div class="ranking-grid">
+                    <div class="tabela-wrapper">
+                        <h3 class="subtitulo-tabela">Top Artilheiros</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Jogador</th>
+                                    <th>Seleção</th>
+                                    <th>Gols</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Miroslav Klose</td>
+                                    <td>Alemanha</td>
+                                    <td>16</td>
+                                </tr>
+                                <tr>
+                                    <td>Ronaldo</td>
+                                    <td>Brasil</td>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <td>Gerd Muller</td>
+                                    <td>Alemanha</td>
+                                    <td>14</td>
+                                </tr>
+                                <tr>
+                                    <td>Just Fontaine</td>
+                                    <td>França</td>
+                                    <td>13</td>
+                                </tr>
+                                <tr>
+                                    <td>Lionel Messi</td>
+                                    <td>Argentina</td>
+                                    <td>13</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tabela-wrapper">
+                        <h3 class="subtitulo-tabela">Top Assistentes</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Jogador</th>
+                                    <th>Seleção</th>
+                                    <th>Assistências</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Lionel Messi</td>
+                                    <td>Argentina</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>Diego Maradona</td>
+                                    <td>Argentina</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>Pelé</td>
+                                    <td>Brasil</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>Thomas Muller</td>
+                                    <td>Alemanha</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>David Beckham</td>
+                                    <td>Inglaterra</td>
+                                    <td>5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cultura-section" id="cultura">
+            <div class="container">
+                <h2>Cultura de Copa: além dos 90 minutos</h2>
+                <div class="cultura-grid">
+                    <article class="cultura-card">
+                        <img src="imagens/mascotes.png" alt="Mascotes da Copa do Mundo 2026" title="Mascotes da Copa do Mundo 2026" class="cultura-img">
+                        <h3>Mascotes icônicos</h3>
+                        <p>Dos clássicos aos mais modernos, os mascotes ajudam a contar a identidade visual de cada edição e viram febre entre os fãs.</p>
+                    </article>
+                    <article class="cultura-card">
+                        <img src="imagens/paises_sed.jpg" alt="Paises sede da Copa de 2026" title="Paises sede da Copa de 2026" class="cultura-img">
+                        <h3>Países-sede</h3>
+                        <p>Canadá, Estados Unidos e México compartilham o palco em 2026, com diferentes culturas e estilos de torcida.</p>
+                    </article>
+                    <article class="cultura-card">
+                        <img src="imagens/album_figurinhas.png" alt="Album de figurinhas da Copa" title="Album de figurinhas da Copa" class="cultura-img">
+                        <h3>Álbum de figurinhas</h3>
+                        <p>Quem nunca trocou repetida no recreio? O álbum é tradição pura e deixa o clima de Copa ainda mais divertido.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link externo obrigatório: aponta para o site oficial da FIFA.
+             Usa target="_blank" e rel="noopener noreferrer" por boas práticas de segurança. -->
+        <section class="link-externo-section">
+            <div class="container link-cta">
+                <h2>Fonte Oficial</h2>
+                <p>Para conferir calendário oficial, grupos e notícias atualizadas, acesse o site da FIFA.</p>
+                <img src="imagens/img_fifa_10.jpg" alt="Sede oficial da FIFA" title="Sede oficial da FIFA" class="imagem-oficial">
+                <a href="https://www.fifa.com/" target="_blank" rel="noopener noreferrer" class="btn">
+                    Acessar FIFA
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé semântico com <footer>: identifica o projeto e a instituição -->
+    <footer id="rodape">
+        <p>&copy; 2026 Guia da Copa. Projeto acadêmico sobre o hobby de acompanhar futebol.</p>
+        <p>IFTM - Campus Uberlândia Centro | Sistemas para Internet</p>
+    </footer>
+
+</body>
+</html>

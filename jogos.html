@@ -1,0 +1,150 @@
+<!-- Página de jogos e estádios | Terceira página do site -->
+<!-- Disciplina: Sistemas para Internet — IFTM Campus Uberlândia Centro -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia da Copa - Jogos</title>
+    <link rel="icon" type="image/png" href="imagens/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Teko:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Menu de navegação: .ativo em "Jogos" para indicar a página atual -->
+    <header id="cabecalho">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Guia da Copa</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">História</a></li>
+                <li><a href="jogos.html" class="ativo">Jogos</a></li>
+                <li><a href="selecoes.html">Seleções</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero-pequeno">
+            <div class="hero-conteudo">
+                <p class="kicker">Parte do hobby</p>
+                <h1>Próximos Jogos</h1>
+                <p>Acompanhe confrontos e classificações, uma das partes mais interessantes para quem gosta de seguir cada detalhe da Copa.</p>
+            </div>
+        </section>
+
+        <!-- Cards de estádios com <article>, <h3> e imagens com alt e title -->
+        <section class="jogos-section">
+            <div class="container">
+                <h2>Agenda de Partidas</h2>
+                <div class="jogos-grid">
+                    <article class="jogo-card">
+                        <img src="imagens/im1_estadio_azteca_4.jpg" alt="Vista do Estadio Azteca" title="Vista do Estadio Azteca" class="jogo-img">
+                        <p class="jogo-data">12 Jun 2026 | Grupo A</p>
+                        <h3>México x Japão</h3>
+                        <p>Estádio Azteca, Cidade do México</p>
+                    </article>
+                    <article class="jogo-card">
+                        <img src="imagens/im2_estadio_metlife_4.jpg" alt="Vista do MetLife Stadium" title="Vista do MetLife Stadium" class="jogo-img">
+                        <p class="jogo-data">13 Jun 2026 | Grupo B</p>
+                        <h3>Brasil x Croácia</h3>
+                        <p>MetLife Stadium, Nova Jersey</p>
+                    </article>
+                    <article class="jogo-card">
+                        <img src="imagens/img3_estadio_sofi_4.jpeg" alt="Vista do SoFi Stadium" title="Vista do SoFi Stadium" class="jogo-img">
+                        <p class="jogo-data">14 Jun 2026 | Grupo C</p>
+                        <h3>França x Senegal</h3>
+                        <p>SoFi Stadium, Los Angeles</p>
+                    </article>
+                    <article class="jogo-card">
+                        <img src="imagens/im4_estadio_at&t_4.jpg" alt="Vista do AT&T Stadium" title="Vista do AT&T Stadium" class="jogo-img">
+                        <p class="jogo-data">15 Jun 2026 | Grupo D</p>
+                        <h3>Argentina x EUA</h3>
+                        <p>AT&T Stadium, Arlington</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="tabela-section">
+            <div class="container">
+                <h2>Mapa das Sedes</h2>
+                <div class="mapa-box">
+                    <img src="imagens/mapa_sedes_3.jpg" alt="Mapa com as sedes da Copa de 2026 em Canada, Estados Unidos e Mexico" title="Mapa com as sedes da Copa de 2026 em Canada, Estados Unidos e Mexico" class="mapa-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabela de classificação: uso correto de <table>, <thead>, <tbody>, <th> e <td> -->
+        <section class="tabela-section">
+            <div class="container">
+                <h2>Classificação Simulada - Grupo B</h2>
+                <div class="tabela-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Seleção</th>
+                                <th>P</th>
+                                <th>J</th>
+                                <th>V</th>
+                                <th>E</th>
+                                <th>D</th>
+                                <th>SG</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Brasil</td>
+                                <td>6</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>+4</td>
+                            </tr>
+                            <tr>
+                                <td>Croácia</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>Canadá</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>-2</td>
+                            </tr>
+                            <tr>
+                                <td>Marrocos</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>-2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé semântico consistente em todas as páginas -->
+    <footer id="rodape">
+        <p>&copy; 2026 Guia da Copa. Projeto acadêmico sobre o hobby de acompanhar futebol.</p>
+        <p>IFTM - Campus Uberlândia Centro | Sistemas para Internet</p>
+    </footer>
+
+</body>
+</html>
