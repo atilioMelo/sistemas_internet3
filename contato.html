@@ -43,7 +43,7 @@
                      Campos: text, email, select, textarea e button — com validação via required. -->
                 <div class="contato-form">
                     <h2>Envie sua Mensagem</h2>
-                    <form action="#" method="post">
+                    <form id="formulario-contato">
                         <div class="form-grupo">
                             <label for="nome">Nome Completo</label>
                             <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
@@ -67,6 +67,7 @@
                             <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-enviar">Enviar Mensagem</button>
+                        <p id="status-msg" style="display:none; margin-top:10px; text-align:center;"></p>
                     </form>
                 </div>
 
@@ -110,6 +111,19 @@
         <p>&copy; 2026 Guia da Copa. Projeto acadêmico sobre o hobby de acompanhar futebol.</p>
         <p>IFTM - Campus Uberlândia Centro | Sistemas para Internet</p>
     </footer>
+
+    <!-- Simulação de envio do formulário -->
+    <script>
+        document.getElementById("formulario-contato").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const statusMsg = document.getElementById("status-msg");
+            statusMsg.style.display = "block";
+            statusMsg.textContent = "Formulário enviado com sucesso!";
+            statusMsg.style.color = "#0f7d3b";
+            document.getElementById("formulario-contato").reset();
+            setTimeout(() => { statusMsg.style.display = "none"; }, 4000);
+        });
+    </script>
 
 </body>
 </html>
